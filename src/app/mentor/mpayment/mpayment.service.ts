@@ -27,7 +27,7 @@ export class MpaymentService{
   }
   public getPayment()
   {
-    return this.http.get<Payment[]>(this.PayUrl+"/findbyuser/"+this.id);
+    return this.http.get<Payment[]>(this.PayUrl+"/findbymentor/"+this.id);
   }
 
  

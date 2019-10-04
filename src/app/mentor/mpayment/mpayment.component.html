@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+     <style>
+    .card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width: 40%;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+    </style>
+
+    
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>                        
+      </button>
+      <a routerLink="/mmenu" class="navbar-brand">Mentor Dashboard</a>
+    </div>
+    
+      <div class="collapse navbar-collapse" id="myNavbar">
+        
+      
+    
+     <ul class="nav navbar-nav navbar-right">
+      <li><a onclick='alert("no notifications")'><span class="glyphicon glyphicon-bell"></span> Notification</a></li>
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span> Hi {{user}} </a>
+      
+  </li>
+    </ul>
+      
+
+    
+    
+      
+      
+
+    
+  </div>
+  
+  </div></nav>
+
+    <body>
+        
+         <div class="jumbotron text-center">
+    <h2>Trainer Payment Dashboard</h2>      
+      </div>
+       
+            
+        <div class="container-fluid well" style="border: solid">
+          <div class="row">
+              <div class="col-lg-2">
+                 <div class="card" style="width: 100%">
+  <img src="assets/img/ram.png" alt="Avatar" style="width:100%">
+  <div class="container-fluid">
+    <h4><b>{{mentor.firstName}} {{mentor.lastName}}</b></h4> 
+    <p>{{mentor.mentorProfile}}</p> 
+  </div>
+</div>
+              </div>
+              <div class="col-lg-10 text-left">
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>Id </th>
+    <th>Training Name</th>
+       <th>Amount</th>
+    <th>Payment</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let pay of payments">
+    <td>{{pay.id}}</td>
+    <td>{{pay.skillName}}</td>
+    <td>{{pay.totalAmountToMentor}}</td>
+    <td><button type="button" class="btn btn-danger "  (click)="toggle(pay.totalAmountToMentor,pay.id)" >{{ showId ? 'Cancel' : 'Withdraw Amount'}}</button></td>
+  </tr>
+  </tbody>
+</table>        
+                  
+                  
+                   <div *ngIf="showId">        
+                  
+                  
+                   <table class="table table-striped">
+  <thead>
+  <tr>
+    
+      <th colspan="1" style="width: 200px">Amount To Withdraw</th>
+      <th>Action</th>
+      <th></th>
+      
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+   
+
+      <td><input [(ngModel)]="withdrawAmount" placeholder="Enter Amount" name="Amt" class="form-control" id="Amt"></td>
+    <td> <button type="button" class="btn btn-success"  (click)="Withdraw(withdrawAmount)" ><span class="glyphicon glyphicon-ok"></span> Withdraw</button></td>
+
+  </tr>
+  </tbody>
+</table> 
+    
+                  </div>
+         
+              
+              </div>
+                                       
+              
+              
+              
+            </div>
+        </div>
+       
+    </body>
+

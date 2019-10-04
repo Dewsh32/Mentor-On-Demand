@@ -1,0 +1,52 @@
+  <head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>  
+</head>    
+<body>    
+<div class="container">
+<div class="form-container sign-in-container">
+    <form>
+     <h1>Create Account</h1>
+     <div class="form-group">
+    <input type="email" [(ngModel)]="newUser.email" placeholder="Email" name="email" class="form-control" id="email">
+  </div>
+  <div class="form-group">
+    <input [(ngModel)]="newUser.firstName" placeholder="First Name" name="firstName" class="form-control" id="firstName">
+  </div>
+  <div class="form-group">
+    <input [(ngModel)]="newUser.lastName" placeholder="Last name" name="lastName" class="form-control" id="lastName">
+  </div>        
+    <div class="form-group">
+    <input [(ngModel)]="newUser.contactNumber" placeholder="Contact Number" name="contactNumber" class="form-control" id="contactNumber">
+  </div>
+<div class="form-group">
+    <input [(ngModel)]="newUser.linkedinUrl" placeholder="linkedinUrl" name="linkedinUrl" class="form-control" id="linkedinUrl">
+  </div>
+        <div class="form-group">
+    <input [(ngModel)]="newUser.password" placeholder="password" name="password" class="form-control" id="password">
+  </div>
+        <div class="form-group">
+    <input [(ngModel)]="newUser.userName" placeholder="userName" name="userName" class="form-control" id="userName">
+  </div>
+
+        <input class="hidden" [(ngModel)]="newUser.active" value="active">
+  <button (click)="createUser()">Sign Up</button>
+    </form>
+  </div>
+        
+  <div class="overlay-container">
+    <div class="overlay">
+     
+      <div class="overlay-panel overlay-right">
+        <h1>Welcome!</h1>
+        <p>Enter your personal details and start journey with us</p>
+        <p>Or Sign-in if you have a account</p>
+       <a routerLink="/ulogin"> <button class="ghost" id="signIn">Sign in</button></a>
+      </div>
+    </div>
+  </div>
+</div>
+</body>

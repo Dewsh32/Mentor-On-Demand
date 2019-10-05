@@ -14,6 +14,7 @@ import {Mentor} from './mprofile.model'
 export class MprofileComponent implements OnInit {
 
 	mentor: Mentor[];
+	user=sessionStorage.getItem('username');
 	constructor(private router: Router, private mprofileService: MprofileService)
 	{
 

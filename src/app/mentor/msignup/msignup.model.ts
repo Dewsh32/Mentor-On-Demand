@@ -14,7 +14,7 @@ export class Mentor{
     active: boolean;
     confirmedSignUp:boolean;
     resetPassword: boolean;
-    resetPasswordDate: string;
+    resetPasswordDate: Date;
     timezone: string;
     rating: string;
     mentorProfile: string;

@@ -14,5 +14,7 @@ active: boolean;
 confirmedSignUp:boolean;
 resetPassword: boolean;
 resetPasswordDate: Date;
+updatedAt: Date;
+createdAt: Date;
 
 }

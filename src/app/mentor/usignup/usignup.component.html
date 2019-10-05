@@ -26,13 +26,15 @@
     <input [(ngModel)]="newUser.linkedinUrl" placeholder="linkedinUrl" name="linkedinUrl" class="form-control" id="linkedinUrl">
   </div>
         <div class="form-group">
-    <input [(ngModel)]="newUser.password" placeholder="password" name="password" class="form-control" id="password">
+    <input type=password [(ngModel)]="newUser.password" placeholder="password" name="password" class="form-control" id="password">
   </div>
         <div class="form-group">
     <input [(ngModel)]="newUser.userName" placeholder="userName" name="userName" class="form-control" id="userName">
   </div>
-
-        <input class="hidden" [(ngModel)]="newUser.active" value="active">
+ <div class="form-group">
+      <input [(ngModel)]="newUser.yearsofexperience"  placeholder="yearsofexperience" name="yearsofexperience" class="form-control" id="yearsofexperience">
+  </div>
+       <br>
   <button (click)="createUser()">Sign Up</button>
     </form>
   </div>

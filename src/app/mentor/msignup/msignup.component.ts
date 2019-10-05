@@ -12,6 +12,8 @@ import {MsignupService} from './msignup.service';
 
 })
 export class MsignupComponent {
+	active=true;
+	date= new Date();
 
 	newMentor: Mentor=new Mentor();
 
@@ -21,6 +23,10 @@ export class MsignupComponent {
 	}
 
 	createMentor(): void{
+		this.newMentor.resetPasswordDate=this.date;
+		this.newMentor.active=this.active;
+		this.newMentor.regCode=this.newMentor.firstName+this.newMentor.contactNumber;
+		this.newMentor.role="mentor";
 		this.msignupService.createMentor(this.newMentor)
 		.subscribe(data=>{
 			alert("Signup successfull");
